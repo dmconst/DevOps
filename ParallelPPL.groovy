@@ -1,15 +1,4 @@
-//def branches = [:]
-//
-//for (int i = 0; i < 4; i++) {
-//    def index = i //if we tried to use i below, it would equal 4 in each job execution.
-//    branches["branch${i}"] = {
-//        build job: 'test_jobs', parameters: [[$class: 'StringParameterValue', name: 'param1', value:
-//                'test_param'], [$class: 'StringParameterValue', name:'dummy', value: "${index}"]]
-//    }
-//}
-//parallel branches
-
-//def e = "UAT1 UAT2 UAT3"
+def e = "${envs}"
 
 node() {
     def envs = e.split() as List
